@@ -13,10 +13,12 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             else {
                 let gameType = this.getAttribute("data-type");
-                alert(`You clicked ${gameType}`);
+                runGame(gameType);
             }
         });
     };
+
+    runGame("add");
 })
 
 /**
@@ -24,9 +26,17 @@ document.addEventListener("DOMContentLoaded", function() {
  * and after the users answer has been processed
  */
 
-function runGame() {
+function runGame(gameType) {
     let num1 = Math.floor(Math.random() * 26) + 1;
     let num2 = Math.floor(Math.random() * 26) + 1;
+
+    if(gameType === "add") {
+        displayAdditionQuestion(num1, num2)
+    }
+    else {
+        alert(`Unkown game type ${gameType}`);
+        throw `Unkown game type ${gameType}. Aborting!`;
+    }
 }
 
 function checkAnswer(answer) {
@@ -45,8 +55,10 @@ function incrementWrongAnswer() {
 
 }
 
-function displayAdditionQuestion() {
-
+function displayAdditionQuestion(oper1, oper2) {
+    document.getElementById("operand1").textContent = oper1;
+    document.getElementById("operand2").textContent = oper2;
+    document.getElementById("operator").textContent = "+";
 }
 
 function displaySubtractionQuestion() {
