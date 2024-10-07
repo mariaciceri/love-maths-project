@@ -115,19 +115,19 @@ function displayAdditionQuestion(oper1, oper2) {
     document.getElementById("operator").textContent = "+";
 }
 
-function displaySubtractionQuestion() {
+function displaySubtractionQuestion(oper1, oper2) {
     document.getElementById("operand1").textContent = oper1;
     document.getElementById("operand2").textContent = oper2;
     document.getElementById("operator").textContent = "-";
 }
 
-function displayMultiplicationQuestion() {
+function displayMultiplicationQuestion(oper1, oper2) {
     document.getElementById("operand1").textContent = oper1;
     document.getElementById("operand2").textContent = oper2;
     document.getElementById("operator").textContent = "x";
 }
 
-function displayDivisionQuestion() {
+function displayDivisionQuestion(oper1, oper2) {
     document.getElementById("operand1").textContent = oper1;
     document.getElementById("operand2").textContent = oper2;
     document.getElementById("operator").textContent = "/";
