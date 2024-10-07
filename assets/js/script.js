@@ -84,7 +84,7 @@ function calculateCorrectAnswer() {
         return [operand1 * operand2, "multiply"]
     }
     else if(operator === "/") {
-        return [operand1 / operand2, "divide"]
+        return [Math.floor(operand1 / operand2), "divide"]
     }
     else {
         alert(`Unimplemented operator ${operator}`);
@@ -128,7 +128,7 @@ function displayMultiplicationQuestion(oper1, oper2) {
 }
 
 function displayDivisionQuestion(oper1, oper2) {
-    document.getElementById("operand1").textContent = oper1;
-    document.getElementById("operand2").textContent = oper2;
+    document.getElementById("operand1").textContent = oper1 > oper2 ? oper1 : oper2;
+    document.getElementById("operand2").textContent = oper1 > oper2 ? oper2 : oper1;
     document.getElementById("operator").textContent = "/";
 }
