@@ -18,6 +18,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     };
 
+    document.getElementById("answer-box").addEventListener("keydown", function(event) {
+        if(event.key === "Enter") {
+            checkAnswer();
+        }
+    })
+    
     runGame("add");
 })
 
@@ -26,6 +32,9 @@ document.addEventListener("DOMContentLoaded", function() {
  * and after the users answer has been processed
  */
 function runGame(gameType) {
+
+    document.getElementById("answer-box").value = "";
+    document.getElementById("answer-box").focus(); //will automatically put the cursor on the answer-box element
     let num1 = Math.floor(Math.random() * 26) + 1;
     let num2 = Math.floor(Math.random() * 26) + 1;
 
